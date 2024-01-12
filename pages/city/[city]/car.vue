@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <div class="max-w-7xl mx-auto">
       <div class="mt-16 flex">
         <!-- Side Bar -->

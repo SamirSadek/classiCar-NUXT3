@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <div class="font-mono max-w-7xl mx-auto">
       <!-- Hero -->
       <div class="mt-10 border-b-4">
