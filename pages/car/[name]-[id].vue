@@ -3,7 +3,7 @@
     <div class="font-mono max-w-7xl mx-auto">
       <!-- Hero -->
       <div class="mt-10 border-b-4">
-        <img class="w-full h-[60vh] rounded" :src="car.url" alt="" />
+        <NuxtImg class="w-full h-[60vh] rounded" :src="car.url" alt="" />
         <h1 class="mt-10 text-4xl">{{ car.name }}</h1>
         <div class="flex justify-between items-center">
           <div class="flex justify-between items-center">
