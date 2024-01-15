@@ -1,13 +1,15 @@
 import type { CarCard } from '#build/components';
 <template>
-  <div class="w-full">
+  <div class="">
     <!-- Card -->
-    <CarCard />
+    <CarCard v-for="car in cars" :key="car.id" :car="car" />
 
     <!-- Card -->
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { cars } = useCar();
+</script>
 
 <style lang="scss" scoped></style>

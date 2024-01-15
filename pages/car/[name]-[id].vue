@@ -1,32 +1,28 @@
 <template>
-  <div>
+  <div v-if="car">
     <div class="font-mono max-w-7xl mx-auto">
       <!-- Hero -->
       <div class="mt-10 border-b-4">
-        <img
-          class="w-full h-[60vh] rounded"
-          src="https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/XM/10570/1689672872537/front-left-side-47.jpg"
-          alt=""
-        />
-        <h1 class="mt-10 text-4xl">BMW XM</h1>
+        <img class="w-full h-[60vh] rounded" :src="car.url" alt="" />
+        <h1 class="mt-10 text-4xl">{{ car.name }}</h1>
         <div class="flex justify-between items-center">
           <div class="flex justify-between items-center">
-            <p>5 Seats</p>
+            <p>{{ car.seats }} Seats</p>
             <p>|</p>
-            <p>67000 miles</p>
+            <p>{{ car.miles }} miles</p>
           </div>
 
           <div>
-            <p class="font-bold text-2xl">$35000</p>
+            <p class="font-bold text-2xl">${{ car.price }}</p>
           </div>
         </div>
       </div>
 
       <!-- Hero -->
-      <div class="mr-10 mt-5 border-b">
+      <div class="mr-10 mt-5 border-b" v-for="features in car.features" :key="features">
         <div class="flex text-lg mt-2">
           <p class="rounded mr-3 text-green-800">✔️</p>
-          <p>Leather Interior</p>
+          <p>{{ features }}</p>
         </div>
       </div>
       <!-- description -->
@@ -60,6 +56,19 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const route = useRoute();
+const { cars } = useCar();
+
+useHead({
+  title: route.params.name,
+});
+
+const car = computed(() => {
+  return cars.find((c) => {
+    return c.id == parseInt(route.params.id);
+  });
+});
+</script>
 
 <style lang="scss" scoped></style>
