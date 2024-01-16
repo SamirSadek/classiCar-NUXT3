@@ -1,15 +1,16 @@
 <template>
-  <div
-    class="relative shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px] bg-[#000812] rounded font-mono text-white"
+  <div class="w-full">
+    <div
+    class=" shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px] bg-[#000812] rounded font-mono text-white"
   >
-    <img
+    <!-- <img
       class="absolute w-7 right-5 top-2 z-index bg-white p-1 rounded-full border-2 border-red-500"
       :src="favored ? heartFilled : heartOutline"
       alt=""
       @click="emit('favor', car.id)"
-    />
+    /> -->
     <div class="flex h-full" @click="navigateTo(`/car/${car.name}-${car.id}`)">
-      <NuxtImg class="p-4 rounded-3xl w-1/3" :src="car.url" alt="" />
+      <NuxtImg class="p-4 rounded-3xl w-full" :src="car.url" alt="" />
       <div class="p-4 flex flex-col">
         <div>
           <h1 class="text-2xl text-blue-500 font-bold">{{ car.name }}</h1>
@@ -23,6 +24,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 

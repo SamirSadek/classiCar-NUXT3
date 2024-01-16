@@ -1,6 +1,6 @@
 import type { CarCard } from '#build/components';
 <template>
-  <div class="">
+  <div class="w-full">
     <!-- Card -->
     <CarCard
       v-for="car in cars"
